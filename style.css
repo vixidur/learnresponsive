@@ -1,14 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--first-color: #4e66ee;
-	--second-color: hsl(251, 94%, 34%);
-	--third-color: #acd418;
-	--forty-color: #fba2d0;
-	--fifty-color: #c688eb;
+	--first-color: #212226;
+	--second-color: #00539c;
+	--third-color: #f14666;
+	--forty-color: #9db898;
 	--textColor: #fff;
 	--box-shadow: 0 5px 25px rgba(2, 2, 2, 0.1);
 	--text-shadow: 0 5px 25px rgba(2, 2, 2, 0.1);
+}
+
+/* Tùy chỉnh thanh cuộn dọc */
+::-webkit-scrollbar {
+	width: 8px;
+	/* Độ rộng của thanh cuộn */
+	background-color: #f14666;
+	/* Màu nền của thanh cuộn */
+}
+
+/* Tùy chỉnh nút cuộn */
+::-webkit-scrollbar-thumb {
+	background-color: #37474F;
+	/* Màu của nút cuộn */
+	/* border-radius: 10px; */
+	/* Độ cong của nút cuộn */
+}
+
+/* Tùy chỉnh track (phần bên dưới của thanh cuộn) */
+::-webkit-scrollbar-track {
+	background-color: #ffffff;
+	/* Màu nền của track */
+}
+
+/* Tùy chỉnh thanh cuộn ngang */
+::-webkit-scrollbar {
+	height: 10px;
+	/* Chiều cao của thanh cuộn */
+}
+
+/* Màu nền của thanh cuộn */
+::-webkit-scrollbar-track {
+	background-color: #ffffff;
+	/* Màu nền */
+	/* border-radius: 10px; */
+	/* Độ cong của viền */
+}
+
+/* Màu của phần cuộn */
+::-webkit-scrollbar-thumb {
+	background-color: #37474F;
+	/* Màu của phần cuộn */
+	/* border-radius: 10px; */
+	/* Độ cong của viền */
 }
 
 body {
@@ -34,9 +77,6 @@ section {
 }
 
 /* tab */
-.tab-nav {
-	/* padding-left: 50px; */
-}
 
 .tab-menu {
 	color: var(--textColor);
@@ -105,6 +145,7 @@ section {
 .left-btn,
 .right-btn {
 	position: absolute;
+	text-shadow: var(--text-shadow);
 	color: var(--text-shadow);
 	font-size: 1.8em;
 	padding: 10px;
@@ -116,21 +157,38 @@ section {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	left: 0;
+	left: 23px;
 	/* background: linear-gradient(to left, transparent, var(--third-color) 80%); */
 	border-top-left-radius: 30px;
 	border-bottom-left-radius: 30px;
 	display: none;
+	color: white;
 }
 
 
 .right-btn {
-	right: 0;
-	/* background: linear-gradient(to right, transparent, var(--third-color) 80%); */
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 30px;
+	right: 23px;
+	background: linear-gradient(to right, transparent, var(--third-color) 80%);
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 40px;
+	color: white;
 }
 
+/* Thanh cuộn dọc đẹp */
+.scrollable-container {
+	width: 300px;
+	/* Chiều rộng của thanh cuộn */
+	height: 200px;
+	/* Chiều cao của thanh cuộn */
+	overflow-y: auto;
+	/* Hiển thị thanh cuộn dọc khi nội dung vượt quá kích thước của container */
+}
+
+.content {
+	/* Phần này có thể chứa nội dung của bạn, với chiều rộng lớn hơn container để tạo ra thanh cuộn dọc */
+	width: 100%;
+	height: auto;
+}
 
 /* TAB Content */
 
@@ -202,14 +260,13 @@ section {
 }
 
 .country {
-	color: var(--third-color);
+	color: var(--forty-color);
 	font-size: 5em;
 	font-weight: 700;
 	text-align: center;
 	text-shadow: var(--text-shadow);
 	opacity: 50%;
 }
-
 
 /* Truy cap vao thiet bi khac va thay doi kich thuoc */
 
@@ -241,4 +298,5 @@ section {
 		font-size: 10vw;
 		padding-bottom: 50px;
 	}
+
 }
